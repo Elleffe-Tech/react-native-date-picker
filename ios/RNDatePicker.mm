@@ -137,7 +137,7 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
         if(newViewProps.mode == RNDatePickerMode::Datetime) [_picker setDatePickerMode:UIDatePickerModeDateAndTime];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 174000
         if(newViewProps.mode == RNDatePickerMode::Monthyear) {
-            if (@available(iOS 17.4, *) && UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomMac) {
+            if (@available(iOS 17.4, *)) {
                 [_picker setDatePickerMode:UIDatePickerModeYearAndMonth];
             } else {
                 [_picker setDatePickerMode:UIDatePickerModeDate];
