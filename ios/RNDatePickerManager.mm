@@ -85,7 +85,7 @@ RCT_CUSTOM_VIEW_PROPERTY(mode, id, DatePicker)
     UIDatePickerMode mode = [RCTConvert UIDatePickerMode:json];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 174000
     if (mode == UIDatePickerModeYearAndMonth) {
-        if (!@available(iOS 17.4, *) || UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomMac) {
+        if (!@available(iOS 17.4, *)) {
             mode = UIDatePickerModeDate;
         }
     }
@@ -174,7 +174,7 @@ RCT_EXPORT_METHOD(openPicker:(NSDictionary *) props
         UIDatePickerMode mode = [RCTConvert UIDatePickerMode:[props objectForKey:@"mode"]];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 174000
         if (mode == UIDatePickerModeYearAndMonth) {
-            if (!@available(iOS 17.4, *) || UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomMac) {
+            if (!@available(iOS 17.4, *)) {
                 mode = UIDatePickerModeDate;
             }
         }
